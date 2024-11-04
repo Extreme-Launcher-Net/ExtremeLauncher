@@ -3,7 +3,7 @@ project(launcher Java)
 find_package(Java 1.8 REQUIRED COMPONENTS Development)
 
 include(UseJava)
-set(CMAKE_JAVA_JAR_ENTRY_POINT org.extremelauncher.EntryPoint)
+set(CMAKE_JAVA_JAR_ENTRY_POINT net.extremelauncher.EntryPoint)
 set(CMAKE_JAVA_COMPILE_FLAGS -target 8 -source 8)
 
 set(SRC

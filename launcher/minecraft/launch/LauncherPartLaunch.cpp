@@ -125,7 +125,7 @@ void LauncherPartLaunch::executeTask()
 #else
     args << classPath.join(':');
 #endif
-    args << "org.extremelauncher.EntryPoint";
+    args << "net.extremelauncher.EntryPoint";
 
     qDebug() << args.join(' ');
 

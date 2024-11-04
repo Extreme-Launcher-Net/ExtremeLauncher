@@ -5,7 +5,7 @@
 
 ## Installation
 
-- All downloads and instructions for Extreme Launcher can be found on our [Website](https://extremelauncher.org/download/).
+- All downloads and instructions for Extreme Launcher can be found on our [Website](https://extremelauncher.net/download/).
 - Last build status can be found in the [GitHub Actions](https://github.com/ExtremeLauncher/ExtremeLauncher/actions) tab (this also includes the pull requests status).
 
 ### Development Builds
