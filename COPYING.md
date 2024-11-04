@@ -1,7 +1,7 @@
-## Prism Launcher
+## Extreme Launcher
 
-     Prism Launcher - Minecraft Launcher
-     Copyright (C) 2022-2024 Prism Launcher Contributors
+     Extreme Launcher - Minecraft Launcher
+     Copyright (C) 2022-2024 Extreme Launcher Contributors
 
      This program is free software: you can redistribute it and/or modify
      it under the terms of the GNU General Public License as published by

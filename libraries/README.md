@@ -59,7 +59,7 @@ mainClass net.minecraft.launchwrapper.Launch
 param --username
 param CENSORED
 param --version
-param Prism Launcher
+param Extreme Launcher
 param --gameDir
 param /home/peterix/minecraft/FTB/17ForgeTest/minecraft
 param --assetsDir
@@ -76,7 +76,7 @@ param --userType
 param mojang
 param --tweakClass
 param cpw.mods.fml.common.launcher.FMLTweaker
-windowTitle Prism Launcher: 172ForgeTest
+windowTitle Extreme Launcher: 172ForgeTest
 windowParams 854x480
 userName CENSORED
 sessionId token:CENSORED:CENSORED
@@ -121,7 +121,7 @@ Available either under LGPL version 2.1 or later.
 
 ## systeminfo
 
-A Prism Launcher-specific library for probing system information.
+A Extreme Launcher-specific library for probing system information.
 
 Apache 2.0
 

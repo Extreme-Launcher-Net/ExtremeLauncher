@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (C) 2022 Sefa Eyeoglu <contact@scrumplex.net>
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -152,7 +152,7 @@ class Library {
     QString getCompatibleNative(const RuntimeContext& runtimeContext) const;
 
    private: /* methods */
-    /// the default storage prefix used by Prism Launcher
+    /// the default storage prefix used by Extreme Launcher
     static QString defaultStoragePrefix();
 
     /// Get the prefix - root of the storage to be used
@@ -170,23 +170,23 @@ class Library {
     /// DEPRECATED URL prefix of the maven repo where the file can be downloaded
     QString m_repositoryURL;
 
-    /// DEPRECATED: Prism Launcher-specific absolute URL. takes precedence over the implicit maven repo URL, if defined
+    /// DEPRECATED: Extreme Launcher-specific absolute URL. takes precedence over the implicit maven repo URL, if defined
     QString m_absoluteURL;
 
-    /// Prism Launcher extension - filename override
+    /// Extreme Launcher extension - filename override
     QString m_filename;
 
-    /// DEPRECATED Prism Launcher extension - display name
+    /// DEPRECATED Extreme Launcher extension - display name
     QString m_displayname;
 
     /**
-     * Prism Launcher-specific type hint - modifies how the library is treated
+     * Extreme Launcher-specific type hint - modifies how the library is treated
      */
     QString m_hint;
 
     /**
-     * storage - by default the local libraries folder in Prism Launcher, but could be elsewhere
-     * Prism Launcher specific, because of FTB.
+     * storage - by default the local libraries folder in Extreme Launcher, but could be elsewhere
+     * Extreme Launcher specific, because of FTB.
      */
     QString m_storagePrefix;
 

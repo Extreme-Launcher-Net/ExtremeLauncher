@@ -1,41 +1,41 @@
 cmake_minimum_required(VERSION 3.9.4)
 project(launcher Java)
-find_package(Java 1.7 REQUIRED COMPONENTS Development)
+find_package(Java 1.8 REQUIRED COMPONENTS Development)
 
 include(UseJava)
-set(CMAKE_JAVA_JAR_ENTRY_POINT org.prismlauncher.EntryPoint)
-set(CMAKE_JAVA_COMPILE_FLAGS -target 7 -source 7)
+set(CMAKE_JAVA_JAR_ENTRY_POINT org.extremelauncher.EntryPoint)
+set(CMAKE_JAVA_COMPILE_FLAGS -target 8 -source 8)
 
 set(SRC
-    org/prismlauncher/EntryPoint.java
-    org/prismlauncher/launcher/Launcher.java
-    org/prismlauncher/launcher/impl/AbstractLauncher.java
-    org/prismlauncher/launcher/impl/StandardLauncher.java
-    org/prismlauncher/exception/ParameterNotFoundException.java
-    org/prismlauncher/exception/ParseException.java
-    org/prismlauncher/utils/Parameters.java
-    org/prismlauncher/utils/ReflectionUtils.java
-    org/prismlauncher/utils/logging/Level.java
-    org/prismlauncher/utils/logging/Log.java
-    org/prismlauncher/legacy/LegacyProxy.java
+    net/extremelauncher/EntryPoint.java
+    net/extremelauncher/launcher/Launcher.java
+    net/extremelauncher/launcher/impl/AbstractLauncher.java
+    net/extremelauncher/launcher/impl/StandardLauncher.java
+    net/extremelauncher/exception/ParameterNotFoundException.java
+    net/extremelauncher/exception/ParseException.java
+    net/extremelauncher/utils/Parameters.java
+    net/extremelauncher/utils/ReflectionUtils.java
+    net/extremelauncher/utils/logging/Level.java
+    net/extremelauncher/utils/logging/Log.java
+    net/extremelauncher/legacy/LegacyProxy.java
 )
 
 set(LEGACY_SRC
-    legacy/org/prismlauncher/legacy/LegacyFrame.java
-    legacy/org/prismlauncher/legacy/LegacyLauncher.java
-    legacy/org/prismlauncher/legacy/fix/online/Handler.java
-    legacy/org/prismlauncher/legacy/fix/online/OnlineFixes.java
-    legacy/org/prismlauncher/legacy/fix/online/OnlineModeFix.java
-    legacy/org/prismlauncher/legacy/fix/online/SkinFix.java
-    legacy/org/prismlauncher/legacy/utils/Base64.java
-    legacy/org/prismlauncher/legacy/utils/api/MojangApi.java
-    legacy/org/prismlauncher/legacy/utils/api/Texture.java
-    legacy/org/prismlauncher/legacy/utils/json/JsonParseException.java
-    legacy/org/prismlauncher/legacy/utils/json/JsonParser.java
-    legacy/org/prismlauncher/legacy/utils/url/ByteArrayUrlConnection.java
-    legacy/org/prismlauncher/legacy/utils/url/UrlUtils.java
+    legacy/net/extremelauncher/legacy/LegacyFrame.java
+    legacy/net/extremelauncher/legacy/LegacyLauncher.java
+    legacy/net/extremelauncher/legacy/fix/online/Handler.java
+    legacy/net/extremelauncher/legacy/fix/online/OnlineFixes.java
+    legacy/net/extremelauncher/legacy/fix/online/OnlineModeFix.java
+    legacy/net/extremelauncher/legacy/fix/online/SkinFix.java
+    legacy/net/extremelauncher/legacy/utils/Base64.java
+    legacy/net/extremelauncher/legacy/utils/api/MojangApi.java
+    legacy/net/extremelauncher/legacy/utils/api/Texture.java
+    legacy/net/extremelauncher/legacy/utils/json/JsonParseException.java
+    legacy/net/extremelauncher/legacy/utils/json/JsonParser.java
+    legacy/net/extremelauncher/legacy/utils/url/ByteArrayUrlConnection.java
+    legacy/net/extremelauncher/legacy/utils/url/UrlUtils.java
     legacy/net/minecraft/Launcher.java
-    legacy/org/prismlauncher/legacy/LegacyProxy.java
+    legacy/net/extremelauncher/legacy/LegacyProxy.java
 )
 
 add_jar(NewLaunch ${SRC})

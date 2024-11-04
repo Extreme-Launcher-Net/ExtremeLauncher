@@ -185,9 +185,9 @@ set(MAC_UPDATE_SOURCES
     updater/MacSparkleUpdater.mm
 )
 
-set(PRISM_UPDATE_SOURCES
-    updater/PrismExternalUpdater.h
-    updater/PrismExternalUpdater.cpp
+set(EXTREME_UPDATE_SOURCES
+    updater/ExtremeExternalUpdater.h
+    updater/ExtremeExternalUpdater.cpp
 )
 
 # Backend for the news bar... there's usually no news.
@@ -602,13 +602,13 @@ set(LINKEXE_SOURCES
     DesktopServices.cpp
 )
 
-set(PRISMUPDATER_SOURCES
-    updater/prismupdater/PrismUpdater.h
-    updater/prismupdater/PrismUpdater.cpp
-    updater/prismupdater/UpdaterDialogs.h
-    updater/prismupdater/UpdaterDialogs.cpp
-    updater/prismupdater/GitHubRelease.h
-    updater/prismupdater/GitHubRelease.cpp
+set(EXTREMEUPDATER_SOURCES
+    updater/extremeupdater/ExtremeUpdater.h
+    updater/extremeupdater/ExtremeUpdater.cpp
+    updater/extremeupdater/UpdaterDialogs.h
+    updater/extremeupdater/UpdaterDialogs.cpp
+    updater/extremeupdater/GitHubRelease.h
+    updater/extremeupdater/GitHubRelease.cpp
 
     Json.h
     Json.cpp
@@ -771,7 +771,7 @@ set(LOGIC_SOURCES
 if(APPLE AND Launcher_ENABLE_UPDATER)
     set (LOGIC_SOURCES ${LOGIC_SOURCES} ${MAC_UPDATE_SOURCES})
 else()
-    set (LOGIC_SOURCES ${LOGIC_SOURCES} ${PRISM_UPDATE_SOURCES})
+    set (LOGIC_SOURCES ${LOGIC_SOURCES} ${EXTREME_UPDATE_SOURCES})
 endif()
 
 SET(LAUNCHER_SOURCES
@@ -1227,12 +1227,12 @@ qt_wrap_ui(LAUNCHER_UI
     ui/dialogs/skins/SkinManageDialog.ui
 )
 
-qt_wrap_ui(PRISM_UPDATE_UI
+qt_wrap_ui(EXTREME_UPDATE_UI
     ui/dialogs/UpdateAvailableDialog.ui
 )
 
 if (NOT Apple)
-    set (LAUNCHER_UI ${LAUNCHER_UI} ${PRISM_UPDATE_UI})
+    set (LAUNCHER_UI ${LAUNCHER_UI} ${EXTREME_UPDATE_UI})
 endif()
 
 qt_add_resources(LAUNCHER_RESOURCES
@@ -1251,8 +1251,8 @@ qt_add_resources(LAUNCHER_RESOURCES
     ../${Launcher_Branding_LogoQRC}
 )
 
-qt_wrap_ui(PRISMUPDATER_UI
-    updater/prismupdater/SelectReleaseDialog.ui
+qt_wrap_ui(EXTREMEUPDATER_UI
+    updater/extremeupdater/SelectReleaseDialog.ui
     ui/widgets/SubTaskProgressBar.ui
     ui/dialogs/ProgressDialog.ui
 )
@@ -1355,9 +1355,9 @@ install(TARGETS ${Launcher_Name}
 
 if(Launcher_BUILD_UPDATER)
     # Updater
-    add_library(prism_updater_logic STATIC ${PRISMUPDATER_SOURCES} ${TASKS_SOURCES} ${PRISMUPDATER_UI})
-    target_include_directories(prism_updater_logic PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-    target_link_libraries(prism_updater_logic
+    add_library(extreme_updater_logic STATIC ${EXTREMEUPDATER_SOURCES} ${TASKS_SOURCES} ${EXTREMEUPDATER_UI})
+    target_include_directories(extreme_updater_logic PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+    target_link_libraries(extreme_updater_logic
         QuaZip::QuaZip
         ${ZLIB_LIBRARIES}
         systeminfo
@@ -1370,9 +1370,9 @@ if(Launcher_BUILD_UPDATER)
         cmark::cmark
     )
 
-    add_executable("${Launcher_Name}_updater" WIN32 updater/prismupdater/updater_main.cpp)
-    target_sources("${Launcher_Name}_updater" PRIVATE updater/prismupdater/updater.exe.manifest)
-    target_link_libraries("${Launcher_Name}_updater" prism_updater_logic)
+    add_executable("${Launcher_Name}_updater" WIN32 updater/extremeupdater/updater_main.cpp)
+    target_sources("${Launcher_Name}_updater" PRIVATE updater/extremeupdater/updater.exe.manifest)
+    target_link_libraries("${Launcher_Name}_updater" extreme_updater_logic)
 
     if(DEFINED Launcher_APP_BINARY_NAME)
         set_target_properties("${Launcher_Name}_updater" PROPERTIES OUTPUT_NAME "${Launcher_APP_BINARY_NAME}_updater")

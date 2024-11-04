@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (C) 2022 Sefa Eyeoglu <contact@scrumplex.net>
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -70,6 +70,9 @@ ProfileSetupDialog::ProfileSetupDialog(MinecraftAccountPtr accountToSetup, QWidg
     connect(&checkStartTimer, &QTimer::timeout, this, &ProfileSetupDialog::startCheck);
 
     setNameStatus(NameStatus::NotSet, QString());
+
+    ui->buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
+    ui->buttonBox->button(QDialogButtonBox::Ok)->setText(tr("OK"));
 }
 
 ProfileSetupDialog::~ProfileSetupDialog()

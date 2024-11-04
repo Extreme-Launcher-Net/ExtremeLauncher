@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (C) 2022 Sefa Eyeoglu <contact@scrumplex.net>
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -138,7 +138,7 @@ void PackInstallTask::install()
     if (unzipMcDir.exists()) {
         // ok, found minecraft dir, move contents to instance dir
         if (!FS::move(m_stagingPath + "/unzip/minecraft", m_stagingPath + "/minecraft")) {
-            emitFailed(tr("Failed to move unzipped Minecraft!"));
+            emitFailed(tr("Failed to move unpacked Minecraft!"));
             return;
         }
     }

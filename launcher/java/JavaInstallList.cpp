@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (C) 2022 Sefa Eyeoglu <contact@scrumplex.net>
  *  Copyright (C) 2023 TheKodeToad <TheKodeToad@proton.me>
  *
@@ -161,7 +161,7 @@ void JavaListLoadTask::executeTask()
     setStatus(tr("Detecting Java installations..."));
 
     JavaUtils ju;
-    QList<QString> candidate_paths = m_only_managed_versions ? getPrismJavaBundle() : ju.FindJavaPaths();
+    QList<QString> candidate_paths = m_only_managed_versions ? getExtremeJavaBundle() : ju.FindJavaPaths();
 
     ConcurrentTask::Ptr job(new ConcurrentTask(this, "Java detection", APPLICATION->settings()->get("NumberOfConcurrentTasks").toInt()));
     m_job.reset(job);

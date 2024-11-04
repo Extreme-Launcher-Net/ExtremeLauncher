@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (c) 2023 Trial97 <alexandru.tripon97@gmail.com>
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -64,6 +64,9 @@ ExportToModListDialog::ExportToModListDialog(QString name, QList<Mod*> mods, QWi
         this->ui->finalText->selectAll();
         this->ui->finalText->copy();
     });
+
+    ui->buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
+    ui->buttonBox->button(QDialogButtonBox::Save)->setText(tr("Save"));
     triggerImp();
 }
 

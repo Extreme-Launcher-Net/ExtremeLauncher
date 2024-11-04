@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (C) 2023 TheKodeToad <TheKodeToad@proton.me>
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -68,6 +68,9 @@ VersionSelectDialog::VersionSelectDialog(BaseVersionList* vlist, QString title, 
     m_buttonBox->setObjectName(QStringLiteral("buttonBox"));
     m_buttonBox->setOrientation(Qt::Horizontal);
     m_buttonBox->setStandardButtons(QDialogButtonBox::Cancel | QDialogButtonBox::Ok);
+
+    m_buttonBox->button(QDialogButtonBox::Ok)->setText(tr("Ok"));
+    m_buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
     m_horizontalLayout->addWidget(m_buttonBox);
 
     m_verticalLayout->addLayout(m_horizontalLayout);

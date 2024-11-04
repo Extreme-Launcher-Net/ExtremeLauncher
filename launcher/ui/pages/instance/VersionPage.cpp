@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-only AND Apache-2.0
 
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (c) 2022 Jamie Mansfield <jmansfield@cadixdev.org>
  *  Copyright (C) 2022-2023 Sefa Eyeoglu <contact@scrumplex.net>
  *  Copyright (C) 2023 TheKodeToad <TheKodeToad@proton.me>
@@ -422,6 +422,7 @@ void VersionPage::on_actionChange_version_triggered()
 
 void VersionPage::on_actionDownload_All_triggered()
 {
+    /*
     if (!APPLICATION->accounts()->anyAccountIsValid()) {
         CustomMessageBox::selectable(this, tr("Error"),
                                      tr("Cannot download Minecraft or update instances unless you have at least "
@@ -430,6 +431,7 @@ void VersionPage::on_actionDownload_All_triggered()
             ->show();
         return;
     }
+    */
 
     auto updateTasks = m_inst->createUpdateTask();
     if (updateTasks.isEmpty()) {

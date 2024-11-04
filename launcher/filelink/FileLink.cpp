@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (C) 2022 Rachel Powers <508861+Ryex@users.noreply.github.com>
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -74,7 +74,7 @@ FileLinkApp::FileLinkApp(int& argc, char** argv) : QCoreApplication(argc, argv),
 
     // Commandline parsing
     QCommandLineParser parser;
-    parser.setApplicationDescription(QObject::tr("a batch MKLINK program for windows to be used with prismlauncher"));
+    parser.setApplicationDescription(QObject::tr("a batch MKLINK program for windows to be used with extremelauncher"));
 
     parser.addOptions({ { { "s", "server" }, "Join the specified server on launch", "pipe name" },
                         { { "H", "hard" }, "use hard links instead of symbolic", "true/false" } });

@@ -5,7 +5,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (C) 2022 Sefa Eyeoglu <contact@scrumplex.net>
  *  Copyright (C) 2022 Rachel Powers <508861+Ryex@users.noreply.github.com>
  *  Copyright (C) 2022 kumquat-ir <66188216+kumquat-ir@users.noreply.github.com>
@@ -51,6 +51,8 @@ BlockedModsDialog::BlockedModsDialog(QWidget* parent, const QString& title, cons
 
     ui->setupUi(this);
 
+    ui->buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
+    ui->buttonBox->button(QDialogButtonBox::Ok)->setText(tr("OK"));
     m_openMissingButton = ui->buttonBox->addButton(tr("Open Missing"), QDialogButtonBox::ActionRole);
     connect(m_openMissingButton, &QPushButton::clicked, this, [this]() { openAll(true); });
 

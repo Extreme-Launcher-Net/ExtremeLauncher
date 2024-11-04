@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (C) 2022 Sefa Eyeoglu <contact@scrumplex.net>
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -155,7 +155,7 @@ JavaInstallPtr JavaUtils::GetDefaultJava()
 
 QStringList addJavasFromEnv(QList<QString> javas)
 {
-    auto env = qEnvironmentVariable("PRISMLAUNCHER_JAVA_PATHS");  // FIXME: use launcher name from buildconfig
+    auto env = qEnvironmentVariable("EXTREMELAUNCHER_JAVA_PATHS");  // FIXME: use launcher name from buildconfig
 #if defined(Q_OS_WIN32)
     QList<QString> javaPaths = env.replace("\\", "/").split(QLatin1String(";"));
 
@@ -349,7 +349,7 @@ QList<QString> JavaUtils::FindJavaPaths()
     }
 
     candidates.append(getMinecraftJavaBundle());
-    candidates.append(getPrismJavaBundle());
+    candidates.append(getExtremeJavaBundle());
     candidates = addJavasFromEnv(candidates);
     candidates.removeDuplicates();
     return candidates;
@@ -394,7 +394,7 @@ QList<QString> JavaUtils::FindJavaPaths()
     }
 
     javas.append(getMinecraftJavaBundle());
-    javas.append(getPrismJavaBundle());
+    javas.append(getExtremeJavaBundle());
     javas = addJavasFromEnv(javas);
     javas.removeDuplicates();
     return javas;
@@ -445,7 +445,7 @@ QList<QString> JavaUtils::FindJavaPaths()
     scanJavaDir("/usr/lib64", gentooFilter);
     scanJavaDir("/usr/lib", gentooFilter);
     scanJavaDir("/opt", gentooFilter);
-    // javas stored in Prism Launcher's folder
+    // javas stored in Extreme Launcher's folder
     scanJavaDirs("java");
     // manually installed JDKs in /opt
     scanJavaDirs("/opt/jdk");
@@ -467,7 +467,7 @@ QList<QString> JavaUtils::FindJavaPaths()
     scanJavaDirs(FS::PathCombine(home, ".gradle/jdks"));
 
     javas.append(getMinecraftJavaBundle());
-    javas.append(getPrismJavaBundle());
+    javas.append(getExtremeJavaBundle());
     javas = addJavasFromEnv(javas);
     javas.removeDuplicates();
     return javas;
@@ -481,7 +481,7 @@ QList<QString> JavaUtils::FindJavaPaths()
     javas.append(this->GetDefaultJava()->path);
 
     javas.append(getMinecraftJavaBundle());
-    javas.append(getPrismJavaBundle());
+    javas.append(getExtremeJavaBundle());
     javas.removeDuplicates();
     return addJavasFromEnv(javas);
 }
@@ -542,7 +542,7 @@ const QString JavaUtils::javaExecutable = "javaw.exe";
 const QString JavaUtils::javaExecutable = "java";
 #endif
 
-QStringList getPrismJavaBundle()
+QStringList getExtremeJavaBundle()
 {
     QList<QString> javas;
 

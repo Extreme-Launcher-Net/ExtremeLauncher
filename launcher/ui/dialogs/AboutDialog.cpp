@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (C) 2022 Sefa Eyeoglu <contact@scrumplex.net>
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -71,13 +71,15 @@ QString getCreditsHtml()
 #endif
     stream << "<center>\n";
 
-    //: %1 is the name of the launcher, determined at build time, e.g. "Prism Launcher Developers"
+    //: %1 is the name of the launcher, determined at build time, e.g. "Extreme Launcher Developers"
     stream << "<h3>" << QObject::tr("%1 Developers", "About Credits").arg(BuildConfig.LAUNCHER_DISPLAYNAME) << "</h3>\n";
+
+    stream << "<h3>" << QObject::tr("%1 Developers", "About Credits").arg("Prism Launcher") << "</h3>\n";
     stream << QString("<p>Sefa Eyeoglu (Scrumplex) %1</p>\n").arg(getWebsite("https://scrumplex.net"));
     stream << QString("<p>d-513 %1</p>\n").arg(getGitHub("d-513"));
     stream << QString("<p>txtsd %1</p>\n").arg(getWebsite("https://ihavea.quest"));
     stream << QString("<p>timoreo %1</p>\n").arg(getGitHub("timoreo22"));
-    stream << QString("<p>Ezekiel Smith (ZekeSmith) %1</p>\n").arg(getGitHub("ZekeSmith"));
+    stream << QString("<p>ZekeZ %1</p>\n").arg(getGitHub("ZekeZDev"));
     stream << QString("<p>cozyGalvinism %1</p>\n").arg(getGitHub("cozyGalvinism"));
     stream << QString("<p>DioEgizio %1</p>\n").arg(getGitHub("DioEgizio"));
     stream << QString("<p>flowln %1</p>\n").arg(getGitHub("flowln"));
@@ -90,7 +92,7 @@ QString getCreditsHtml()
     stream << "<br />\n";
 
     // TODO: possibly retrieve from git history at build time?
-    //: %1 is the name of the launcher, determined at build time, e.g. "Prism Launcher Developers"
+    //: %1 is the name of the launcher, determined at build time, e.g. "Extreme Launcher Developers"
     stream << "<h3>" << QObject::tr("%1 Developers", "About Credits").arg("MultiMC") << "</h3>\n";
     stream << "<p>Andrew Okin &lt;<a href='mailto:forkk@forkk.net'>forkk@forkk.net</a>&gt;</p>\n";
     stream << QString("<p>Petr Mrázek &lt;<a href='mailto:peterix@gmail.com'>peterix@gmail.com</a>&gt;</p>\n");
@@ -101,7 +103,7 @@ QString getCreditsHtml()
 
     stream << "<h3>" << QObject::tr("With thanks to", "About Credits") << "</h3>\n";
     stream << QString("<p>Boba %1</p>\n").arg(getWebsite("https://bobaonline.neocities.org/"));
-    stream << QString("<p>Davi Rafael %1</p>\n").arg(getWebsite("https://auti.one/"));
+    stream << QString("<p>AutiOne %1</p>\n").arg(getWebsite("https://auti.one/"));
     stream << QString("<p>Fulmine %1</p>\n").arg(getWebsite("https://fulmine.xyz/"));
     stream << QString("<p>ely %1</p>\n").arg(getGitHub("elyrodso"));
     stream << QString("<p>gon sawa %1</p>\n").arg(getGitHub("gonsawa"));
@@ -114,7 +116,7 @@ QString getCreditsHtml()
     stream << "<p>Zeker Zhayard &lt;<a href='https://twitter.com/zeker_zhayard'>@Zeker_Zhayard</a>&gt;</p>\n";
     stream << "<p>Everyone who helped establish our branding!</p>\n";
     stream
-        << "<p>And everyone else who <a href='https://github.com/PrismLauncher/PrismLauncher/graphs/contributors'>contributed</a>!</p>\n";
+        << "<p>And everyone else who <a href='https://github.com/ExtremeLauncher/ExtremeLauncher/graphs/contributors'>contributed</a>!</p>\n";
     stream << "<br />\n";
 
     stream << "</center>\n";

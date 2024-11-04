@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only AND Apache-2.0
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (C) 2022 Sefa Eyeoglu <contact@scrumplex.net>
  *  Copyright (C) 2022 TheKodeToad <TheKodeToad@proton.me>
  *  Copyright (c) 2023 Trial97 <alexandru.tripon97@gmail.com>
@@ -99,7 +99,7 @@ void ModPage::triggerSearch()
     updateSelectionButton();
 
     static_cast<ModModel*>(m_model)->searchWithTerm(getSearchTerm(), m_ui->sortByBox->currentData().toUInt(), changed);
-    m_fetch_progress.watch(m_model->activeSearchJob().get());
+    m_fetchProgress.watch(m_model->activeSearchJob().get());
 }
 
 QMap<QString, QString> ModPage::urlHandlers() const

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (C) 2023 TheKodeToad <TheKodeToad@proton.me>
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -103,6 +103,9 @@ ExportPackDialog::ExportPackDialog(InstancePtr instance, QWidget* parent, ModPla
     QHeaderView* headerView = ui->files->header();
     headerView->setSectionResizeMode(QHeaderView::ResizeToContents);
     headerView->setSectionResizeMode(0, QHeaderView::Stretch);
+
+    ui->buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
+    ui->buttonBox->button(QDialogButtonBox::Ok)->setText(tr("OK"));
 }
 
 ExportPackDialog::~ExportPackDialog()

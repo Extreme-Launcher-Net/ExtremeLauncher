@@ -2,9 +2,9 @@
   description = "A custom launcher for Minecraft that allows you to easily manage multiple installations of Minecraft at once (Fork of MultiMC)";
 
   nixConfig = {
-    extra-substituters = [ "https://prismlauncher.cachix.org" ];
+    extra-substituters = [ "https://extremelauncher.cachix.org" ];
     extra-trusted-public-keys = [
-      "prismlauncher.cachix.org-1:9/n/FGyABA2jLUVfY+DEp4hKds/rwO+SCOtbOkDzd+c="
+      "extremelauncher.cachix.org-1:9/n/FGyABA2jLUVfY+DEp4hKds/rwO+SCOtbOkDzd+c="
     ];
   };
 
@@ -23,8 +23,8 @@
 
       ```
       {
-        inputs.prismlauncher = {
-          url = "github:PrismLauncher/PrismLauncher";
+        inputs.extremelauncher = {
+          url = "github:ExtremeLauncher/ExtremeLauncher";
           inputs = {
       	    flake-compat.follows = "";
           };
@@ -74,7 +74,7 @@
         in
         {
           default = pkgs.mkShell {
-            inputsFrom = [ self.packages.${system}.prismlauncher-unwrapped ];
+            inputsFrom = [ self.packages.${system}.extremelauncher-unwrapped ];
             buildInputs = with pkgs; [
               ccache
               ninja
@@ -86,7 +86,7 @@
       formatter = forAllSystems (system: nixpkgsFor.${system}.nixfmt-rfc-style);
 
       overlays.default = final: prev: {
-        prismlauncher-unwrapped = prev.callPackage ./nix/unwrapped.nix {
+        extremelauncher-unwrapped = prev.callPackage ./nix/unwrapped.nix {
           inherit
             libnbtplusplus
             nix-filter
@@ -94,7 +94,7 @@
             ;
         };
 
-        prismlauncher = final.callPackage ./nix/wrapper.nix { };
+        extremelauncher = final.callPackage ./nix/wrapper.nix { };
       };
 
       packages = forAllSystems (
@@ -103,12 +103,12 @@
           pkgs = nixpkgsFor.${system};
 
           # Build a scope from our overlay
-          prismPackages = lib.makeScope pkgs.newScope (final: self.overlays.default final pkgs);
+          extremePackages = lib.makeScope pkgs.newScope (final: self.overlays.default final pkgs);
 
           # Grab our packages from it and set the default
           packages = {
-            inherit (prismPackages) prismlauncher-unwrapped prismlauncher;
-            default = prismPackages.prismlauncher;
+            inherit (extremePackages) extremelauncher-unwrapped extremelauncher;
+            default = extremePackages.extremelauncher;
           };
         in
         # Only output them if they're available on the current system
@@ -119,15 +119,15 @@
       legacyPackages = forAllSystems (
         system:
         let
-          prismPackages = self.packages.${system};
+          extremePackages = self.packages.${system};
           legacyPackages = self.legacyPackages.${system};
         in
         {
-          prismlauncher-debug = prismPackages.prismlauncher.override {
-            prismlauncher-unwrapped = legacyPackages.prismlauncher-unwrapped-debug;
+          extremelauncher-debug = extremePackages.extremelauncher.override {
+            extremelauncher-unwrapped = legacyPackages.extremelauncher-unwrapped-debug;
           };
 
-          prismlauncher-unwrapped-debug = prismPackages.prismlauncher-unwrapped.overrideAttrs {
+          extremelauncher-unwrapped-debug = extremePackages.extremelauncher-unwrapped.overrideAttrs {
             cmakeBuildType = "Debug";
             dontStrip = true;
           };

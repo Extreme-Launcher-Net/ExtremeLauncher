@@ -35,6 +35,7 @@ Task::Ptr ModrinthAPI::currentVersions(const QStringList& hashes, QString hash_f
 
     netJob->addNetAction(Net::ApiUpload::makeByteArray(QString(BuildConfig.MODRINTH_PROD_URL + "/version_files"), response, body_raw));
 
+    netJob->setAskRetry(false);
     return netJob;
 }
 

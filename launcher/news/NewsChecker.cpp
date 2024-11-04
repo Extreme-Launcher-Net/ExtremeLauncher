@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (C) 2022 Sefa Eyeoglu <contact@scrumplex.net>
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -34,6 +34,8 @@
  */
 
 #include "NewsChecker.h"
+
+#include <Application.h>
 
 #include <QByteArray>
 #include <QDomDocument>
@@ -86,6 +88,18 @@ void NewsChecker::rssDownloadFinished()
             return;
         }
         newsData->clear();
+    }
+
+    serverList.clear();
+    QDomNodeList itemsServerList = doc.elementsByTagName("serverlistentry");
+    for (int i = 0; i < itemsServerList.count(); ++i) {
+        QDomNode node = itemsServerList.at(i);
+        if (!node.isNull() && node.isElement()) {
+            QDomElement element = node.toElement();
+            QString server = element.text();
+            serverList << server; // Add the server string to the list
+            //qDebug() << "Loaded server list entry" << server;
+        }
     }
 
     // If the parsing succeeded, read it.

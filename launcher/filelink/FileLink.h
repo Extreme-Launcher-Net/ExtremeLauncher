@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (C) 2022 Rachel Powers <508861+Ryex@users.noreply.github.com>
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -34,7 +34,7 @@
 #include <QUrl>
 #include <memory>
 
-#define PRISM_EXTERNAL_EXE
+#define EXTREME_EXTERNAL_EXE
 #include "FileSystem.h"
 
 class FileLinkApp : public QCoreApplication {

@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-only AND Apache-2.0
 
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (C) 2022 Sefa Eyeoglu <contact@scrumplex.net>
  *  Copyright (C) 2022 Lenny McLennington <lenny@sneed.church>
  *  Copyright (C) 2022 Tayou <git@tayou.org>
@@ -48,6 +48,7 @@
 #include "net/PasteUpload.h"
 #include "pathmatcher/MultiMatcher.h"
 #include "pathmatcher/SimplePrefixMatcher.h"
+#include "tasks/Task.h"
 #include "tools/GenericProfiler.h"
 #include "ui/InstanceWindow.h"
 #include "ui/MainWindow.h"
@@ -150,7 +151,7 @@
 #include "updater/MacSparkleUpdater.h"
 #endif
 #else
-#include "updater/PrismExternalUpdater.h"
+#include "updater/ExtremeExternalUpdater.h"
 #endif
 
 #if defined Q_OS_WIN32
@@ -359,7 +360,7 @@ Application::Application(int& argc, char** argv) : QApplication(argc, argv)
     m_dataPath = dataPath;
 
     /*
-     * Establish the mechanism for communication with an already running PrismLauncher that uses the same data path.
+     * Establish the mechanism for communication with an already running ExtremeLauncher that uses the same data path.
      * If there is one, tell it what the user actually wanted to do and exit.
      * We want to initialize this before logging to avoid messing with the log of a potential already running copy.
      */
@@ -927,9 +928,9 @@ Application::Application(int& argc, char** argv) : QApplication(argc, argv)
 
     // check update locks
     {
-        auto update_log_path = FS::PathCombine(m_dataPath, "logs", "prism_launcher_update.log");
+        auto update_log_path = FS::PathCombine(m_dataPath, "logs", "extreme_launcher_update.log");
 
-        auto update_lock = QFileInfo(FS::PathCombine(m_dataPath, ".prism_launcher_update.lock"));
+        auto update_lock = QFileInfo(FS::PathCombine(m_dataPath, ".extreme_launcher_update.lock"));
         if (update_lock.exists()) {
             auto [timestamp, from, to, target, data_path] = read_lock_File(update_lock.absoluteFilePath());
             auto infoMsg = tr("This installation has a update lock file present at: %1\n"
@@ -941,7 +942,7 @@ Application::Application(int& argc, char** argv) : QApplication(argc, argv)
                               "\n"
                               "This likely means that a update attempt failed. Please ensure your installation is in working order before "
                               "proceeding.\n"
-                              "Check the Prism Launcher updater log at: \n"
+                              "Check the Extreme Launcher updater log at: \n"
                               "%7\n"
                               "for details on the last update attempt.\n"
                               "\n"
@@ -971,13 +972,13 @@ Application::Application(int& argc, char** argv) : QApplication(argc, argv)
             }
         }
 
-        auto update_fail_marker = QFileInfo(FS::PathCombine(m_dataPath, ".prism_launcher_update.fail"));
+        auto update_fail_marker = QFileInfo(FS::PathCombine(m_dataPath, ".extreme_launcher_update.fail"));
         if (update_fail_marker.exists()) {
             auto infoMsg = tr("An update attempt failed\n"
                               "\n"
                               "Please ensure your installation is in working order before "
                               "proceeding.\n"
-                              "Check the Prism Launcher updater log at: \n"
+                              "Check the Extreme Launcher updater log at: \n"
                               "%1\n"
                               "for details on the last update attempt.")
                                .arg(update_log_path);
@@ -1003,12 +1004,12 @@ Application::Application(int& argc, char** argv) : QApplication(argc, argv)
             }
         }
 
-        auto update_success_marker = QFileInfo(FS::PathCombine(m_dataPath, ".prism_launcher_update.success"));
+        auto update_success_marker = QFileInfo(FS::PathCombine(m_dataPath, ".extreme_launcher_update.success"));
         if (update_success_marker.exists()) {
             auto infoMsg = tr("Update succeeded\n"
                               "\n"
                               "You are now running %1 .\n"
-                              "Check the Prism Launcher updater log at: \n"
+                              "Check the Extreme Launcher updater log at: \n"
                               "%2\n"
                               "for details.")
                                .arg(BuildConfig.printableVersionString())
@@ -1094,9 +1095,10 @@ bool Application::createSetupWizard()
     bool pasteInterventionRequired = settings()->get("PastebinURL") != "";
     bool validWidgets = m_themeManager->isValidApplicationTheme(settings()->get("ApplicationTheme").toString());
     bool validIcons = m_themeManager->isValidIconTheme(settings()->get("IconTheme").toString());
-    bool login = !m_accounts->anyAccountIsValid() && capabilities() & Application::SupportsMSA;
+    //bool login = !m_accounts->anyAccountIsValid() && capabilities() & Application::SupportsMSA;
     bool themeInterventionRequired = !validWidgets || !validIcons;
-    bool wizardRequired = javaRequired || languageRequired || pasteInterventionRequired || themeInterventionRequired || askjava || login;
+    //bool wizardRequired = javaRequired || languageRequired || pasteInterventionRequired || themeInterventionRequired || askjava || login;
+    bool wizardRequired = javaRequired || languageRequired || pasteInterventionRequired || themeInterventionRequired || askjava;
     if (wizardRequired) {
         // set default theme after going into theme wizard
         if (!validIcons)
@@ -1125,14 +1127,17 @@ bool Application::createSetupWizard()
             m_setupWizard->addPage(new ThemeWizardPage(m_setupWizard));
         }
 
+        /*
         if (login) {
             m_setupWizard->addPage(new LoginWizardPage(m_setupWizard));
         }
+        */
         connect(m_setupWizard, &QDialog::finished, this, &Application::setupWizardFinished);
         m_setupWizard->show();
     }
 
-    return wizardRequired || login;
+    //return wizardRequired || login;
+    return wizardRequired;
 }
 
 bool Application::updaterEnabled()
@@ -1235,7 +1240,7 @@ void Application::performMainStartupAction()
         m_updater.reset(new MacSparkleUpdater());
 #endif
 #else
-        m_updater.reset(new PrismExternalUpdater(m_mainWindow, m_rootPath, m_dataPath));
+        m_updater.reset(new ExtremeExternalUpdater(m_mainWindow, m_rootPath, m_dataPath));
 #endif
         qDebug() << "<> Updater started.";
     }
@@ -1380,6 +1385,7 @@ bool Application::launch(InstancePtr instance, bool online, bool demo, Minecraft
     if (m_updateRunning) {
         qDebug() << "Cannot launch instances while an update is running. Please try again when updates are completed.";
     } else if (instance->canLaunch()) {
+        QMutexLocker locker(&m_instanceExtrasMutex);
         auto& extras = m_instanceExtras[instance->id()];
         auto window = extras.window;
         if (window) {
@@ -1404,7 +1410,7 @@ bool Application::launch(InstancePtr instance, bool online, bool demo, Minecraft
         connect(controller.get(), &LaunchController::failed, this, &Application::controllerFailed);
         connect(controller.get(), &LaunchController::aborted, this, [this] { controllerFailed(tr("Aborted")); });
         addRunningInstance();
-        controller->start();
+        QMetaObject::invokeMethod(controller.get(), &Task::start, Qt::QueuedConnection);
         return true;
     } else if (instance->isRunning()) {
         showInstanceWindow(instance, "console");
@@ -1422,9 +1428,11 @@ bool Application::kill(InstancePtr instance)
         qWarning() << "Attempted to kill instance" << instance->id() << ", which isn't running.";
         return false;
     }
+    QMutexLocker locker(&m_instanceExtrasMutex);
     auto& extras = m_instanceExtras[instance->id()];
     // NOTE: copy of the shared pointer keeps it alive
     auto controller = extras.controller;
+    locker.unlock();
     if (controller) {
         return controller->abort();
     }
@@ -1478,6 +1486,8 @@ void Application::controllerSucceeded()
     if (!controller)
         return;
     auto id = controller->id();
+
+    QMutexLocker locker(&m_instanceExtrasMutex);
     auto& extras = m_instanceExtras[id];
 
     // on success, do...
@@ -1503,6 +1513,7 @@ void Application::controllerFailed(const QString& error)
     if (!controller)
         return;
     auto id = controller->id();
+    QMutexLocker locker(&m_instanceExtrasMutex);
     auto& extras = m_instanceExtras[id];
 
     // on failure, do... nothing
@@ -1560,6 +1571,7 @@ InstanceWindow* Application::showInstanceWindow(InstancePtr instance, QString pa
     if (!instance)
         return nullptr;
     auto id = instance->id();
+    QMutexLocker locker(&m_instanceExtrasMutex);
     auto& extras = m_instanceExtras[id];
     auto& window = extras.window;
 
@@ -1597,6 +1609,7 @@ void Application::on_windowClose()
     m_openWindows--;
     auto instWindow = qobject_cast<InstanceWindow*>(QObject::sender());
     if (instWindow) {
+        QMutexLocker locker(&m_instanceExtrasMutex);
         auto& extras = m_instanceExtras[instWindow->instanceId()];
         extras.window = nullptr;
         if (extras.controller) {

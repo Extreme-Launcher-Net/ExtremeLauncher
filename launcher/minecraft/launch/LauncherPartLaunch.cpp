@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (C) 2022 Sefa Eyeoglu <contact@scrumplex.net>
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -125,7 +125,7 @@ void LauncherPartLaunch::executeTask()
 #else
     args << classPath.join(':');
 #endif
-    args << "org.prismlauncher.EntryPoint";
+    args << "org.extremelauncher.EntryPoint";
 
     qDebug() << args.join(' ');
 

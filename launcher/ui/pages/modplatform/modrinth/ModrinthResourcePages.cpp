@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (C) 2022 Sefa Eyeoglu <contact@scrumplex.net>
  *  Copyright (c) 2023 Trial97 <alexandru.tripon97@gmail.com>
  *
@@ -144,7 +144,7 @@ auto ModrinthShaderPackPage::shouldDisplay() const -> bool
 
 unique_qobject_ptr<ModFilterWidget> ModrinthModPage::createFilterWidget()
 {
-    return ModFilterWidget::create(&static_cast<MinecraftInstance&>(m_base_instance), true, this);
+    return ModFilterWidget::create(&static_cast<MinecraftInstance&>(m_baseInstance), true, this);
 }
 
 void ModrinthModPage::prepareProviderCategories()

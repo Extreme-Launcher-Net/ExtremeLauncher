@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (C) 2022 Sefa Eyeoglu <contact@scrumplex.net>
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -59,7 +59,7 @@ Q_DECLARE_METATYPE(MinecraftAccountPtr)
  * A profile within someone's Mojang account.
  *
  * Currently, the profile system has not been implemented by Mojang yet,
- * but we might as well add some things for it in Prism Launcher right now so
+ * but we might as well add some things for it in Extreme Launcher right now so
  * we don't have to rip the code to pieces to add it later.
  */
 struct AccountProfile {

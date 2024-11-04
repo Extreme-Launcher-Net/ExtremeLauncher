@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (C) 2022 Sefa Eyeoglu <contact@scrumplex.net>
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -67,6 +67,9 @@ NewComponentDialog::NewComponentDialog(const QString& initialName, const QString
     connect(ui->uidTextBox, &QLineEdit::textChanged, this, &NewComponentDialog::updateDialogState);
 
     ui->nameTextBox->setFocus();
+
+    ui->buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
+    ui->buttonBox->button(QDialogButtonBox::Ok)->setText(tr("OK"));
 
     originalPlaceholderText = ui->uidTextBox->placeholderText();
     updateDialogState();

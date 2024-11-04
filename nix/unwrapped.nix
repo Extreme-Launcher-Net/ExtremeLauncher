@@ -26,7 +26,7 @@ assert lib.assertMsg (
 ) "gamemodeSupport is only available on Linux.";
 
 stdenv.mkDerivation {
-  pname = "prismlauncher-unwrapped";
+  pname = "extremelauncher-unwrapped";
   version = self.shortRev or self.dirtyShortRev or "unknown";
 
   src = nix-filter.lib {
@@ -101,13 +101,13 @@ stdenv.mkDerivation {
       their own mods, texture packs, saves, etc) and helps you manage them and
       their associated options with a simple interface.
     '';
-    homepage = "https://prismlauncher.org/";
+    homepage = "https://extremelauncher.net/";
     license = lib.licenses.gpl3Only;
     maintainers = with lib.maintainers; [
       Scrumplex
       getchoo
     ];
-    mainProgram = "prismlauncher";
+    mainProgram = "extremelauncher";
     platforms = lib.platforms.linux ++ lib.platforms.darwin;
   };
 }

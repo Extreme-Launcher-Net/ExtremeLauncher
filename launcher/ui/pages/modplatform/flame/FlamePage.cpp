@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (c) 2022 Jamie Mansfield <jmansfield@cadixdev.org>
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -273,7 +273,7 @@ void FlamePage::suggestCurrent()
 void FlamePage::onVersionSelectionChanged(int index)
 {
     bool is_blocked = false;
-    ui->versionSelectionBox->currentData().toInt(&is_blocked);
+    ui->versionSelectionBox->itemData(index).toInt(&is_blocked);
 
     if (index == -1 || is_blocked) {
         m_selected_version_index = -1;

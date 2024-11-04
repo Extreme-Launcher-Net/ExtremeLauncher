@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only AND Apache-2.0
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (C) 2022 Sefa Eyeoglu <contact@scrumplex.net>
  *  Copyright (C) 2022 TheKodeToad <TheKodeToad@proton.me>
  *  Copyright (c) 2023 Trial97 <alexandru.tripon97@gmail.com>
@@ -209,7 +209,7 @@ auto FlameShaderPackPage::shouldDisplay() const -> bool
 
 unique_qobject_ptr<ModFilterWidget> FlameModPage::createFilterWidget()
 {
-    return ModFilterWidget::create(&static_cast<MinecraftInstance&>(m_base_instance), false, this);
+    return ModFilterWidget::create(&static_cast<MinecraftInstance&>(m_baseInstance), false, this);
 }
 
 void FlameModPage::prepareProviderCategories()

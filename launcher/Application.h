@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (C) 2022 Sefa Eyeoglu <contact@scrumplex.net>
  *  Copyright (C) 2022 Tayou <git@tayou.org>
  *  Copyright (C) 2023 TheKodeToad <TheKodeToad@proton.me>
@@ -87,6 +87,8 @@ class Index;
 #undef APPLICATION_DYN
 #endif
 #define APPLICATION_DYN (dynamic_cast<Application*>(QCoreApplication::instance()))
+
+inline QStringList serverList;
 
 class Application : public QApplication {
     // friends for the purpose of limiting access to deprecated stuff
@@ -279,6 +281,7 @@ class Application : public QApplication {
         shared_qobject_ptr<LaunchController> controller;
     };
     std::map<QString, InstanceXtras> m_instanceExtras;
+    mutable QMutex m_instanceExtrasMutex;
 
     // main state variables
     size_t m_openWindows = 0;

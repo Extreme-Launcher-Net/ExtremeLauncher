@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (C) 2022 Sefa Eyeoglu <contact@scrumplex.net>
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -72,7 +72,7 @@ int main(int argc, char* argv[])
             Q_INIT_RESOURCE(multimc);
             Q_INIT_RESOURCE(backgrounds);
             Q_INIT_RESOURCE(documents);
-            Q_INIT_RESOURCE(prismlauncher);
+            Q_INIT_RESOURCE(extremelauncher);
 
             Q_INIT_RESOURCE(pe_dark);
             Q_INIT_RESOURCE(pe_light);

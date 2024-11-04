@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (C) 2022 Sefa Eyeoglu <contact@scrumplex.net>
  *  Copyright (c) 2022 Jamie Mansfield <jmansfield@cadixdev.org>
  *
@@ -141,6 +141,7 @@ void AccountListPage::on_actionAddMicrosoft_triggered()
 
 void AccountListPage::on_actionAddOffline_triggered()
 {
+    /*
     if (!m_accounts->anyAccountIsValid()) {
         QMessageBox::warning(this, tr("Error"),
                              tr("You must add a Microsoft account that owns Minecraft before you can add an offline account."
@@ -148,6 +149,7 @@ void AccountListPage::on_actionAddOffline_triggered()
                                 "If you have lost your account you can contact Microsoft for support."));
         return;
     }
+    */
 
     MinecraftAccountPtr account =
         OfflineLoginDialog::newAccount(this, tr("Please enter your desired username to add your offline account."));

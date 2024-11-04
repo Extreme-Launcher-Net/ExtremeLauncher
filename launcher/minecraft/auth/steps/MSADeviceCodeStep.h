@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 /*
- *  Prism Launcher - Minecraft Launcher
+ *  Extreme Launcher - Minecraft Launcher
  *  Copyright (c) 2024 Trial97 <alexandru.tripon97@gmail.com>
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -58,7 +58,7 @@ class MSADeviceCodeStep : public AuthStep {
     void authorizeWithBrowser(QString url, QString code, int expiresIn);
 
    private slots:
-    void deviceAutorizationFinished();
+    void deviceAuthorizationFinished();
     void startPoolTimer();
     void authenticateUser();
     void authenticationFinished();
