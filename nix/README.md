@@ -20,7 +20,7 @@ Example (NixOS):
     trusted-substituters = [ "https://extremelauncher.cachix.org" ];
 
     trusted-public-keys = [
-      "extremelauncher.cachix.org-1:9/n/FGyABA2jLUVfY+DEp4hKds/rwO+SCOtbOkDzd+c="
+      "extremelauncher.cachix.org-1:U9Kycn4CKXn/LcEW67OiQ7Wr/INyEw5IXqghMWeu9uw="
     ];
   };
 }
@@ -146,7 +146,7 @@ Example (NixOS):
     trusted-substituters = [ "https://extremelauncher.cachix.org" ];
 
     trusted-public-keys = [
-      "extremelauncher.cachix.org-1:9/n/FGyABA2jLUVfY+DEp4hKds/rwO+SCOtbOkDzd+c="
+      "extremelauncher.cachix.org-1:U9Kycn4CKXn/LcEW67OiQ7Wr/INyEw5IXqghMWeu9uw="
     ];
   };
 }

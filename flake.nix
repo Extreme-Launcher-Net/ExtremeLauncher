@@ -4,7 +4,7 @@
   nixConfig = {
     extra-substituters = [ "https://extremelauncher.cachix.org" ];
     extra-trusted-public-keys = [
-      "extremelauncher.cachix.org-1:9/n/FGyABA2jLUVfY+DEp4hKds/rwO+SCOtbOkDzd+c="
+      "extremelauncher.cachix.org-1:U9Kycn4CKXn/LcEW67OiQ7Wr/INyEw5IXqghMWeu9uw="
     ];
   };
 
@@ -12,7 +12,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     libnbtplusplus = {
-      url = "github:PrismLauncher/libnbtplusplus";
+      url = "github:ExtremeLauncher/libnbtplusplus";
       flake = false;
     };
 

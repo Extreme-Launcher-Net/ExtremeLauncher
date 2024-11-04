@@ -21,13 +21,13 @@
       "locked": {
         "lastModified": 1699286814,
         "narHash": "sha256-yy0q+bky80LtK1GWzz7qpM+aAGrOqLuewbid8WT1ilk=",
-        "owner": "PrismLauncher",
+        "owner": "ExtremeLauncher",
         "repo": "libnbtplusplus",
         "rev": "23b955121b8217c1c348a9ed2483167a6f3ff4ad",
         "type": "github"
       },
       "original": {
-        "owner": "PrismLauncher",
+        "owner": "ExtremeLauncher",
         "repo": "libnbtplusplus",
         "type": "github"
       }
