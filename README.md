@@ -8,7 +8,7 @@
 
 <p align="center">
   Extreme Launcher is a custom launcher for Minecraft that allows you to easily manage multiple installations of Minecraft at once.<br />
-  <br />This is a <b>fork</b> of the MultiMC Launcher and is <b>not</b> endorsed by it.
+  <br />This is a <b>fork</b> of the Prims/MultiMC Launcher and is <b>not</b> endorsed by it.
 </p>
 
 ## Installation
@@ -42,18 +42,6 @@ These packages are also available to all the distributions based on the ones men
 ## Community & Support
 
 Feel free to create a GitHub issue if you find a bug or want to suggest a new feature. We have multiple community spaces where other community members can help you:
-
-- **Our Discord server:**
-
-[![Extreme Launcher Discord server](https://discordapp.com/api/guilds/1031648380885147709/widget.png?style=banner3)](https://extremelauncher.net/discord)
-
-- **Our Matrix space:**
-
-[![Extreme Launcher Space](https://img.shields.io/matrix/extremelauncher:matrix.org?style=for-the-badge&label=Matrix%20Space&logo=matrix&color=purple)](https://extremelauncher.net/matrix)
-
-- **Our Subreddit:**
-
-[![r/ExtremeLauncher](https://img.shields.io/reddit/subreddit-subscribers/extremelauncher?style=for-the-badge&logo=reddit)](https://extremelauncher.net/reddit)
 
 ## Translations
 
