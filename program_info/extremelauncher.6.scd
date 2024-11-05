@@ -69,11 +69,11 @@ variables, besides other common Qt variables:
 
 # BUGS
 
-https://github.com/ExtremeLauncher/ExtremeLauncher/issues
+https://github.com/Extreme-Launcher/Extreme-Launcher/issues
 
 # RESOURCES
 
-GitHub: https://github.com/ExtremeLauncher/ExtremeLauncher
+GitHub: https://github.com/Extreme-Launcher/Extreme-Launcher
 
 Main website: https://extremelauncher.net
 

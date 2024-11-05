@@ -116,7 +116,7 @@ QString getCreditsHtml()
     stream << "<p>Zeker Zhayard &lt;<a href='https://twitter.com/zeker_zhayard'>@Zeker_Zhayard</a>&gt;</p>\n";
     stream << "<p>Everyone who helped establish our branding!</p>\n";
     stream
-        << "<p>And everyone else who <a href='https://github.com/ExtremeLauncher/ExtremeLauncher/graphs/contributors'>contributed</a>!</p>\n";
+        << "<p>And everyone else who <a href='https://github.com/Extreme-Launcher/Extreme-Launcher/graphs/contributors'>contributed</a>!</p>\n";
     stream << "<br />\n";
 
     stream << "</center>\n";
