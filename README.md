@@ -6,7 +6,7 @@
 ## Installation
 
 - All downloads and instructions for Extreme Launcher can be found on our [Website](https://extremelauncher.net/download/).
-- Last build status can be found in the [GitHub Actions](https://github.com/Extreme-Launcher/Extreme-Launcher/actions) tab (this also includes the pull requests status).
+- Last build status can be found in the [GitHub Actions](https://github.com/Extreme-Launcher-Net/ExtremeLauncher/actions) tab (this also includes the pull requests status).
 
 ### Development Builds
 
@@ -14,8 +14,8 @@ Please understand that these builds are not intended for most users. There may b
 
 There are development builds available through:
 
-- [GitHub Actions](https://github.com/Extreme-Launcher/Extreme-Launcher/actions) (includes builds from pull requests opened by contribuitors)
-- [nightly.link](https://nightly.link/Extreme-Launcher/Extreme-Launcher/workflows/trigger_builds/develop) (this will always point only to the latest version of develop)
+- [GitHub Actions](https://github.com/Extreme-Launcher-Net/ExtremeLauncher/actions) (includes builds from pull requests opened by contribuitors)
+- [nightly.link](https://nightly.link/Extreme-Launcher-Net/ExtremeLauncher/workflows/trigger_builds/develop) (this will always point only to the latest version of develop)
 
 These have debug information in the binaries, so their file sizes are relatively larger.
 
@@ -47,7 +47,7 @@ Note that if you build this software without removing the provided API keys in [
 
 If you do not agree with these terms and conditions, then remove the associated API keys from the [CMakeLists.txt](CMakeLists.txt) file by setting them to an empty string (`""`).
 
-## License [![https://github.com/Extreme-Launcher/Extreme-Launcher/blob/develop/LICENSE](https://img.shields.io/github/license/Extreme-Launcher/Extreme-Launcher?label=License&logo=gnu&color=C4282D)](LICENSE)
+## License [![https://github.com/Extreme-Launcher-Net/ExtremeLauncher/blob/develop/LICENSE](https://img.shields.io/github/license/Extreme-Launcher-Net/ExtremeLauncher?label=License&logo=gnu&color=C4282D)](LICENSE)
 
 All launcher code is available under the GPL-3.0-only license.
 

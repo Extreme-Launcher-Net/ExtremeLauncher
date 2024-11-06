@@ -12,7 +12,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     libnbtplusplus = {
-      url = "github:Extreme-Launcher/libnbtplusplus";
+      url = "github:Extreme-Launcher-Net/libnbtplusplus";
       flake = false;
     };
 
@@ -24,7 +24,7 @@
       ```
       {
         inputs.extremelauncher = {
-          url = "github:Extreme-Launcher/Extreme-Launcher";
+          url = "github:Extreme-Launcher-Net/ExtremeLauncher";
           inputs = {
       	    flake-compat.follows = "";
           };
