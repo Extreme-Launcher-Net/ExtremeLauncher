@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   update-flake:
-    if: github.repository == 'Extreme-Launcher-Net/ExtremeLauncher'
+    if: github.repository == 'ExtremeLauncherTeam/ExtremeLauncher'
     runs-on: ubuntu-latest
 
     steps:

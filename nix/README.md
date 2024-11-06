@@ -28,7 +28,7 @@ Example (NixOS):
 
 ### Installing the package directly
 
-After adding `github:Extreme-Launcher-Net/ExtremeLauncher` to your flake inputs, you can access the flake's `packages` output.
+After adding `github:ExtremeLauncherTeam/ExtremeLauncher` to your flake inputs, you can access the flake's `packages` output.
 
 Example:
 
@@ -38,7 +38,7 @@ Example:
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     extremelauncher = {
-      url = "github:Extreme-Launcher-Net/ExtremeLauncher";
+      url = "github:ExtremeLauncherTeam/ExtremeLauncher";
 
       # Optional: Override the nixpkgs input of extremelauncher to use the same revision as the rest of your flake
       # Note that this may break the reproducibility mentioned above, and you might not be able to access the binary cache
@@ -86,7 +86,7 @@ Example:
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     extremelauncher = {
-      url = "github:Extreme-Launcher-Net/ExtremeLauncher";
+      url = "github:ExtremeLauncherTeam/ExtremeLauncher";
 
       # Optional: Override the nixpkgs input of extremelauncher to use the same revision as the rest of your flake
       # Note that this may break the reproducibility mentioned above, and you might not be able to access the binary cache
@@ -126,11 +126,11 @@ You can simply call the default package of this flake.
 Example:
 
 ```shell
-nix run github:Extreme-Launcher-Net/ExtremeLauncher
+nix run github:ExtremeLauncherTeam/ExtremeLauncher
 
-nix shell github:Extreme-Launcher-Net/ExtremeLauncher
+nix shell github:ExtremeLauncherTeam/ExtremeLauncher
 
-nix profile install github:Extreme-Launcher-Net/ExtremeLauncher
+nix profile install github:ExtremeLauncherTeam/ExtremeLauncher
 ```
 
 ## Installing a development release (without flakes)
@@ -163,7 +163,7 @@ Example:
 {
   environment.systemPackages = [
     (import (
-      builtins.fetchTarball "https://github.com/Extreme-Launcher-Net/ExtremeLauncher/archive/develop.tar.gz"
+      builtins.fetchTarball "https://github.com/ExtremeLauncherTeam/ExtremeLauncher/archive/develop.tar.gz"
     )).packages.${pkgs.system}.extremelauncher
   ];
 }
@@ -181,7 +181,7 @@ Example:
 {
   nixpkgs.overlays = [
     (import (
-      builtins.fetchTarball "https://github.com/Extreme-Launcher-Net/ExtremeLauncher/archive/develop.tar.gz"
+      builtins.fetchTarball "https://github.com/ExtremeLauncherTeam/ExtremeLauncher/archive/develop.tar.gz"
     )).overlays.default
   ];
 
@@ -196,7 +196,7 @@ You can add this repository as a channel and install its packages that way.
 Example:
 
 ```shell
-nix-channel --add https://github.com/Extreme-Launcher-Net/ExtremeLauncher/archive/develop.tar.gz extremelauncher
+nix-channel --add https://github.com/ExtremeLauncherTeam/ExtremeLauncher/archive/develop.tar.gz extremelauncher
 
 nix-channel --update extremelauncher
 

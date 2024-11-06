@@ -20,7 +20,7 @@ set(Launcher_Copyright "${Launcher_Copyright}" PARENT_SCOPE)
 set(Launcher_Domain "extremelauncher.net" PARENT_SCOPE)
 set(Launcher_UserAgent "${Launcher_CommonName}/${Launcher_VERSION_NAME}" PARENT_SCOPE)
 set(Launcher_ConfigFile "extremelauncher.cfg" PARENT_SCOPE)
-set(Launcher_Git "https://github.com/Extreme-Launcher-Net/ExtremeLauncher" PARENT_SCOPE)
+set(Launcher_Git "https://github.com/ExtremeLauncherTeam/ExtremeLauncher" PARENT_SCOPE)
 set(Launcher_DesktopFileName "net.extremelauncher.ExtremeLauncher.desktop" PARENT_SCOPE)
 set(Launcher_SVGFileName "net.extremelauncher.ExtremeLauncher.svg" PARENT_SCOPE)
 
